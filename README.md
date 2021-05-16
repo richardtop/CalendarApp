@@ -32,6 +32,9 @@ To run CalendarApp:
 - Xcode 12
 - iOS 14
 
+## Contributing
+
+*CalendarApp* is an ongoing project and contributions are welcome. The goal for this project is to be a reference and demonstrate the capabilities of the CalendarKit. The app is inspired by the [iOS / iPadOS Calendar App](https://apps.apple.com/us/app/calendar/id1108185179).
 
 ## Author
 
