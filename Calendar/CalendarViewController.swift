@@ -21,7 +21,7 @@ final class CalendarViewController: DayViewController {
         // Subscribe to notifications to reload the UI when 
         subscribeToNotifications()
     }
-
+    
     private func requestAccessToCalendar() {
         // Request access to the events
         eventStore.requestAccess(to: .event) { granted, error in
@@ -56,34 +56,20 @@ final class CalendarViewController: DayViewController {
                                                       calendars: nil) // Search in all calendars
         
         let eventKitEvents = eventStore.events(matching: predicate) // All events happening on a given day
+        let calendarKitEvents = eventKitEvents.map(EKWrapper.init)
         
-        // The `eventKitEvents` has a type of `[EKEvent]`, we need to convert them to CalendarKit Events
-        let calendarKitEvents = eventKitEvents.map { ekEvent -> Event in
-            let ckEvent = Event() // Creating a new CalendarKit.Event
-            ckEvent.startDate = ekEvent.startDate // Copying all of the properties of the `EKEvent` to the newly created CalendarKit.Event
-            ckEvent.endDate = ekEvent.endDate
-            ckEvent.isAllDay = ekEvent.isAllDay
-            ckEvent.text = ekEvent.title
-            if let eventColor = ekEvent.calendar.cgColor {
-                ckEvent.color = UIColor(cgColor: eventColor)
-            }
-            
-            ckEvent.userInfo = ekEvent
-            
-            return ckEvent
-        }
-
         return calendarKitEvents
     }
     
     // MARK: - DayViewDelegate
     
+    // MARK: Event Selection
+    
     override func dayViewDidSelectEventView(_ eventView: EventView) {
-        guard let ckEvent = eventView.descriptor as? Event,
-              let ekEvent = ckEvent.userInfo as? EKEvent else {
+        guard let ckEvent = eventView.descriptor as? EKWrapper else {
             return
         }
-        presentDetailViewForEvent(ekEvent)
+        presentDetailViewForEvent(ckEvent.ekEvent)
     }
     
     private func presentDetailViewForEvent(_ ekEvent: EKEvent) {
@@ -94,5 +80,34 @@ final class CalendarViewController: DayViewController {
         
         navigationController?.pushViewController(eventController,
                                                  animated: true)
+    }
+    
+    // MARK: Event Editing
+    
+    override func dayViewDidLongPressEventView(_ eventView: EventView) {
+        guard let descriptor = eventView.descriptor as? EKWrapper else {
+            return
+        }
+        endEventEditing()
+        beginEditing(event: descriptor,
+                     animated: true)
+    }
+    
+    override func dayView(dayView: DayView, didUpdate event: EventDescriptor) {
+        guard let eventWrapper = event as? EKWrapper else { return }
+        if let _ = event.editedEvent {
+            eventWrapper.commitEditing()
+            try! eventStore.save(eventWrapper.ekEvent,
+                                 span: .thisEvent)
+        }
+        reloadData()
+    }
+    
+    override func dayView(dayView: DayView, didTapTimelineAt date: Date) {
+        endEventEditing()
+    }
+    
+    override func dayViewDidBeginDragging(dayView: DayView) {
+        endEventEditing()
     }
 }

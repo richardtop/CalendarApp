@@ -13,6 +13,7 @@
 		7993D33026486B5400406316 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7993D32F26486B5400406316 /* Assets.xcassets */; };
 		7993D33326486B5400406316 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7993D33126486B5400406316 /* LaunchScreen.storyboard */; };
 		7993D33C26486C5400406316 /* CalendarKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7993D33B26486C5400406316 /* CalendarKit */; };
+		799963D4265997FD00AEC712 /* EKWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799963D3265997FD00AEC712 /* EKWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		7993D32F26486B5400406316 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7993D33226486B5400406316 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7993D33426486B5400406316 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		799963D3265997FD00AEC712 /* EKWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EKWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				7993D32626486B5300406316 /* AppDelegate.swift */,
 				7993D32826486B5300406316 /* SceneDelegate.swift */,
 				7993D32A26486B5300406316 /* CalendarViewController.swift */,
+				799963D3265997FD00AEC712 /* EKWrapper.swift */,
 				7993D32F26486B5400406316 /* Assets.xcassets */,
 				7993D33126486B5400406316 /* LaunchScreen.storyboard */,
 				7993D33426486B5400406316 /* Info.plist */,
@@ -144,6 +147,7 @@
 				7993D32B26486B5300406316 /* CalendarViewController.swift in Sources */,
 				7993D32726486B5300406316 /* AppDelegate.swift in Sources */,
 				7993D32926486B5300406316 /* SceneDelegate.swift in Sources */,
+				799963D4265997FD00AEC712 /* EKWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
