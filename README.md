@@ -4,7 +4,7 @@
 
 # CalendarApp
 
-**CalendarApp** is a tempalte repository serving as a starting point for experiments with [CalendarKit](https://github.com/richardtop/CalendarKit). It's a sample calendar app for iOS built with [CalendarKit](https://github.com/richardtop/CalendarKit) and [EventKit](https://developer.apple.com/documentation/eventkit). It displays events stored in the `EKEventStore` similarly to the default calendar app.
+**CalendarApp** is a template repository serving as a starting point for experiments with [CalendarKit](https://github.com/richardtop/CalendarKit). It's a sample calendar app for iOS built with [CalendarKit](https://github.com/richardtop/CalendarKit) and [EventKit](https://developer.apple.com/documentation/eventkit). It displays events stored in the `EKEventStore` similarly to the default calendar app.
 
 ## Getting Started
 To run the app, just clone the repository and open `Calendar.xcodeproj`. If you'd like to edit the code, press "Use this template" to copy this repository to your GitHub account and keep your changes.
@@ -32,6 +32,9 @@ To run CalendarApp:
 - Xcode 12
 - iOS 14
 
+## Contributing
+
+*CalendarApp* is an ongoing project and contributions are welcome. The goal for this project is to be a reference and demonstrate the capabilities of the CalendarKit. The app is inspired by the [iOS / iPadOS Calendar App](https://apps.apple.com/us/app/calendar/id1108185179).
 
 ## Author
 
