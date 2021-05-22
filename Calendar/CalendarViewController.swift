@@ -8,6 +8,7 @@
 import UIKit
 import CalendarKit
 import EventKit
+import EventKitUI
 
 final class CalendarViewController: DayViewController {
     private let eventStore = EKEventStore()
@@ -39,6 +40,8 @@ final class CalendarViewController: DayViewController {
         reloadData()
     }
     
+    // MARK: - DayViewDataSource
+    
     // This is the `DayViewDataSource` method that the client app has to implement in order to display events with CalendarKit
     override func eventsForDate(_ date: Date) -> [EventDescriptor] {
         // The `date` always has it's Time components set to 00:00:00 of the day requested
@@ -64,9 +67,32 @@ final class CalendarViewController: DayViewController {
             if let eventColor = ekEvent.calendar.cgColor {
                 ckEvent.color = UIColor(cgColor: eventColor)
             }
+            
+            ckEvent.userInfo = ekEvent
+            
             return ckEvent
         }
 
         return calendarKitEvents
+    }
+    
+    // MARK: - DayViewDelegate
+    
+    override func dayViewDidSelectEventView(_ eventView: EventView) {
+        guard let ckEvent = eventView.descriptor as? Event,
+              let ekEvent = ckEvent.userInfo as? EKEvent else {
+            return
+        }
+        presentDetailViewForEvent(ekEvent)
+    }
+    
+    private func presentDetailViewForEvent(_ ekEvent: EKEvent) {
+        let eventController = EKEventViewController()
+        eventController.event = ekEvent
+        eventController.allowsCalendarPreview = true
+        eventController.allowsEditing = true
+        
+        navigationController?.pushViewController(eventController,
+                                                 animated: true)
     }
 }
