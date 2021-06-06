@@ -84,6 +84,25 @@ final class CalendarViewController: DayViewController {
     
     // MARK: Event Editing
     
+    override func dayView(dayView: DayView, didLongPressTimelineAt date: Date) {
+        // Cancel editing current event and start creating a new one
+        endEventEditing()
+        let newEKEvent = EKEvent(eventStore: eventStore)
+        newEKEvent.calendar = eventStore.defaultCalendarForNewEvents
+        newEKEvent.startDate = date
+        var components = DateComponents()
+        components.hour = 1
+        let endDate = calendar.date(byAdding: components, to: date)
+        newEKEvent.endDate = endDate
+        newEKEvent.title = "New event"
+        
+        let newEKWrapper = EKWrapper(eventKitEvent: newEKEvent)
+        newEKWrapper.editedEvent = newEKWrapper
+
+        create(event: newEKWrapper, animated: true)
+    }
+    
+    
     override func dayViewDidLongPressEventView(_ eventView: EventView) {
         guard let descriptor = eventView.descriptor as? EKWrapper else {
             return
