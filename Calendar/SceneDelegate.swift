@@ -19,10 +19,19 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
+        
+        let baseViewController = UIViewController()
+        baseViewController.view.backgroundColor = .systemGray6
         let rootViewController = CalendarViewController()
         let navigationController = UINavigationController(rootViewController: rootViewController)
-        navigationController.navigationBar.isTranslucent = false
-        window?.rootViewController = navigationController
+        
+        // Fix for the black navigation bar on iOS 15
+        navigationController.willMove(toParent: baseViewController)
+        baseViewController.addChild(navigationController)
+        baseViewController.view.addSubview(navigationController.view)
+        navigationController.didMove(toParent: baseViewController)
+        
+        window?.rootViewController = baseViewController
         window?.makeKeyAndVisible()
     }
 
