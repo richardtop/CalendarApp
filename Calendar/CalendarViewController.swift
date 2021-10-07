@@ -11,7 +11,7 @@ import EventKit
 import EventKitUI
 
 final class CalendarViewController: DayViewController, EKEventEditViewDelegate {
-    private let eventStore = EKEventStore()
+    private var eventStore = EKEventStore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +24,14 @@ final class CalendarViewController: DayViewController, EKEventEditViewDelegate {
     
     private func requestAccessToCalendar() {
         // Request access to the events
-        eventStore.requestAccess(to: .event) { granted, error in
+        eventStore.requestAccess(to: .event) { [weak self] granted, error in
             // Handle the response to the request.
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                self.initializeStore()
+                self.subscribeToNotifications()
+                self.reloadData()
+            }
         }
     }
     
@@ -34,6 +40,10 @@ final class CalendarViewController: DayViewController, EKEventEditViewDelegate {
                                                selector: #selector(storeChanged(_:)),
                                                name: .EKEventStoreChanged,
                                                object: eventStore)
+    }
+    
+    private func initializeStore() {
+        eventStore = EKEventStore()
     }
     
     @objc private func storeChanged(_ notification: Notification) {
