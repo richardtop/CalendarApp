@@ -59,7 +59,6 @@ final class EKWrapper: EventDescriptor {
     public var backgroundColor = UIColor()
     public var textColor = SystemColors.label
     public var font = UIFont.boldSystemFont(ofSize: 12)
-    public var userInfo: Any?
     public weak var editedEvent: EventDescriptor? {
         didSet {
             updateColors()
