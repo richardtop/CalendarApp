@@ -10,7 +10,7 @@ import EventKit
 import CalendarKit
 
 final class EKWrapper: EventDescriptor {
-    var dateInterval: DateInterval {
+    public var dateInterval: DateInterval {
         get {
             DateInterval(start: ekEvent.startDate, end: ekEvent.endDate)
         }
