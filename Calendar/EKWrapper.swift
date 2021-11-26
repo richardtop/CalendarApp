@@ -10,21 +10,14 @@ import EventKit
 import CalendarKit
 
 final class EKWrapper: EventDescriptor {
-    public var startDate: Date {
+    var dateInterval: DateInterval {
         get {
-            ekEvent.startDate
+            DateInterval(start: ekEvent.startDate, end: ekEvent.endDate)
         }
+        
         set {
-            ekEvent.startDate = newValue
-        }
-    }
-    
-    public var endDate: Date {
-        get {
-            ekEvent.endDate
-        }
-        set {
-            ekEvent.endDate = newValue
+            ekEvent.startDate = newValue.start
+            ekEvent.endDate = newValue.end
         }
     }
     
@@ -80,10 +73,9 @@ final class EKWrapper: EventDescriptor {
     
     public func commitEditing() {
         guard let edited = editedEvent else {return}
-        edited.startDate = startDate
-        edited.endDate = endDate
+        edited.dateInterval = dateInterval
     }
-
+    
     private func updateColors() {
       (editedEvent != nil) ? applyEditingColors() : applyStandardColors()
     }
