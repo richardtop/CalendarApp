@@ -21,7 +21,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         
         let baseViewController = UIViewController()
-        baseViewController.view.backgroundColor = .systemGray6
+        baseViewController.view.backgroundColor = .systemBackground
         let rootViewController = CalendarViewController()
         let navigationController = UINavigationController(rootViewController: rootViewController)
         
