@@ -1,4 +1,5 @@
-![CalendarApp](https://user-images.githubusercontent.com/8013017/117589582-193feb80-b133-11eb-80ed-1b72b69f7006.png)
+![CalendarApp](https://user-images.githubusercontent.com/8013017/117589582-193feb80-b133-11eb-80ed-1b72b69f7006.png#gh-light-mode-only)
+![CalendarApp](https://user-images.githubusercontent.com/8013017/146282505-368018e9-a93d-41af-8869-b3b53651dc93.png#gh-dark-mode-only)
 
 [![License](https://img.shields.io/github/license/richardtop/calendarkit)](https://swiftpackageindex.com/richardtop/CalendarKit)
 
