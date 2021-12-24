@@ -20,7 +20,7 @@ Please, use [GitHub Issues](https://github.com/richardtop/CalendarKit/issues) on
 
 
 ## Examples
-[Video](https://youtu.be/KR58xW0TkwI)
+[Video](https://www.youtube.com/watch?v=fWstACG-7dA)
 
 [Try live in a browser](https://appetize.io/app/k85kqpdr1fp79e59f1c4ar8cx4)
 
