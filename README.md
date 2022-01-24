@@ -22,8 +22,6 @@ Please, use [GitHub Issues](https://github.com/richardtop/CalendarKit/issues) on
 ## Examples
 [Video](https://www.youtube.com/watch?v=Fi-Qqp9BaAs)
 
-[Try live in a browser](https://appetize.io/app/k85kqpdr1fp79e59f1c4ar8cx4)
-
 To try CalendarKit with CocoaPods issue the following command in the Terminal:
 ```ruby
 pod try CalendarKit
