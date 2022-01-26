@@ -2,6 +2,10 @@
 ![CalendarApp](https://user-images.githubusercontent.com/8013017/146282505-368018e9-a93d-41af-8869-b3b53651dc93.png#gh-dark-mode-only)
 
 [![License](https://img.shields.io/github/license/richardtop/calendarkit)](https://swiftpackageindex.com/richardtop/CalendarKit)
+[![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCx1gvWpy5zjOd7yZyDwmXEA?style=social)](https://www.youtube.com/channel/UCx1gvWpy5zjOd7yZyDwmXEA)
+[![GitHub followers](https://img.shields.io/github/followers/richardtop?style=social)](https://github.com/richardtop)
+
+[Richard Topchii on Telegram](https://t.me/richardtop)
 
 # CalendarApp
 
