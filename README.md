@@ -3,7 +3,9 @@
 
 [![License](https://img.shields.io/github/license/richardtop/calendarkit)](https://swiftpackageindex.com/richardtop/CalendarKit)
 [![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCx1gvWpy5zjOd7yZyDwmXEA?style=social)](https://www.youtube.com/channel/UCx1gvWpy5zjOd7yZyDwmXEA?sub_confirmation=1)
+[![Twitter](https://img.shields.io/twitter/follow/richardtop_ios?style=social)](https://twitter.com/richardtop_ios)
 [![GitHub followers](https://img.shields.io/github/followers/richardtop?style=social)](https://github.com/richardtop)
+
 
 [Richard Topchii on Telegram](https://t.me/richardtop)
 
