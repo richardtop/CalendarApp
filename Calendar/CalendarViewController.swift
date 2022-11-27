@@ -21,6 +21,12 @@ final class CalendarViewController: DayViewController, EKEventEditViewDelegate {
         // Subscribe to notifications to reload the UI when 
         subscribeToNotifications()
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Need to set toolbar hidden, as it might be displayed in black due to EventKitUI / EditingViewController setting it
+        navigationController?.setToolbarHidden(true, animated: false)
+    }
     
     private func requestAccessToCalendar() {
         // Request access to the events
