@@ -33,7 +33,7 @@ final class CalendarViewController: DayViewController, EKEventEditViewDelegate {
         eventStore.requestAccess(to: .event) { [weak self] granted, error in
             // Handle the response to the request.
             DispatchQueue.main.async {
-                guard let self = self else { return }
+                guard let self else { return }
                 self.initializeStore()
                 self.subscribeToNotifications()
                 self.reloadData()
