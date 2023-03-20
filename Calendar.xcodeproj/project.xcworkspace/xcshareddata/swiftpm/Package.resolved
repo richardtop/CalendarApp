@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/richardtop/CalendarKit.git",
       "state" : {
-        "revision" : "03bdad645a8d4b64a73859f8a71d6ceec49fb0cf",
-        "version" : "1.1.4"
+        "revision" : "0a0cee80eba2bd593b6bfb3a6152656af57fd31c",
+        "version" : "1.1.7"
       }
     }
   ],
