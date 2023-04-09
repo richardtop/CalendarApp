@@ -35,7 +35,7 @@ pod try CalendarKit
 
 ## Requirements
 
-To run CalendarApp:
+To run CalendarApp, the following minimum requirements apply:
 
 - Xcode 14 (Swift 5.7)
 - iOS 14
