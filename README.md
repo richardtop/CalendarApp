@@ -37,7 +37,7 @@ pod try CalendarKit
 
 To run CalendarApp:
 
-- Xcode 12
+- Xcode 14 (Swift 5.7)
 - iOS 14
 
 ## Contributing
