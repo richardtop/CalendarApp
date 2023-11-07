@@ -29,9 +29,11 @@ final class CalendarViewController: DayViewController, EKEventEditViewDelegate {
     }
     
     private func requestAccessToCalendar() {
-        // Request access to the events
-        eventStore.requestAccess(to: .event) { [weak self] granted, error in
-            // Handle the response to the request.
+        // Code to handle the response to the request.
+        // We create the completion handler first, as we need to ask for a permission differently in iOS 17
+        let completionHandler: EKEventStoreRequestAccessCompletionHandler =  { [weak self] granted, error in
+            // Looks like starting iOS 17 completion handler is not executed on the main thread by default.
+            // iOS 17 error?
             DispatchQueue.main.async {
                 guard let self else { return }
                 self.initializeStore()
@@ -39,15 +41,23 @@ final class CalendarViewController: DayViewController, EKEventEditViewDelegate {
                 self.reloadData()
             }
         }
+
+        // Request access to the events
+        // More info: https://developer.apple.com/documentation/technotes/tn3152-migrating-to-the-latest-calendar-access-levels
+        if #available(iOS 17.0, *) {
+            eventStore.requestFullAccessToEvents(completion: completionHandler)
+        } else {
+            eventStore.requestAccess(to: .event, completion: completionHandler)
+        }
     }
-    
+
     private func subscribeToNotifications() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(storeChanged(_:)),
                                                name: .EKEventStoreChanged,
                                                object: eventStore)
     }
-    
+
     private func initializeStore() {
         eventStore = EKEventStore()
     }
