@@ -20,9 +20,9 @@
 To run the app, just clone the repository and open `Calendar.xcodeproj`. If you'd like to edit the code, press "Use this template" to copy this repository to your GitHub account and keep your changes.
 
 ## Need Help?
-If you have a **programming question** about how to use CalendarKit in your application, ask it on StackOverflow with the [CalendarKit](https://stackoverflow.com/questions/tagged/calendarkit) tag.
+If you have a **programming question** about how to use CalendarKit in your application, [Create a new GitHub Issue with the question tag](https://github.com/richardtop/CalendarKit/issues/new?assignees=&labels=question&projects=&template=question.md&title=).
 
-Please, use [GitHub Issues](https://github.com/richardtop/CalendarKit/issues) only for reporting a bug or requesting a new feature.
+[Create a new Issue from template](https://github.com/richardtop/CalendarKit/issues/new/choose) to report a bug or request a new feature.
 
 
 ## Examples
