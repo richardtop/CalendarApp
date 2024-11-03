@@ -28,11 +28,6 @@ If you have a **programming question** about how to use CalendarKit in your appl
 ## Examples
 [Video](https://www.youtube.com/watch?v=Fi-Qqp9BaAs)
 
-To try CalendarKit with CocoaPods issue the following command in the Terminal:
-```ruby
-pod try CalendarKit
-```
-
 ## Requirements
 
 To run CalendarApp, the following minimum requirements apply:
