@@ -6,9 +6,6 @@
 [![Twitter](https://img.shields.io/twitter/follow/richardtop_ios?style=social)](https://twitter.com/richardtop_ios)
 [![GitHub followers](https://img.shields.io/github/followers/richardtop?style=social)](https://github.com/richardtop)
 
-
-[Richard Topchii on Telegram](https://t.me/richardtop)
-
 # CalendarApp
 
 **CalendarApp** is a template repository serving as a starting point for experiments with [CalendarKit](https://github.com/richardtop/CalendarKit). It's a sample calendar app for iOS built with [CalendarKit](https://github.com/richardtop/CalendarKit) and [EventKit](https://developer.apple.com/documentation/eventkit). It displays events stored in the `EKEventStore` similarly to the default calendar app.
